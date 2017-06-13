@@ -7,25 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD044D8BE18E7A72BA2C5B27 /* Pods_HDNewHouseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8108BDAC24584FCA53FD545A /* Pods_HDNewHouseDemo.framework */; };
 		D96523E01EE97DED0067DBD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D96523DF1EE97DED0067DBD8 /* main.m */; };
 		D96523E31EE97DED0067DBD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D96523E21EE97DED0067DBD8 /* AppDelegate.m */; };
 		D96523E61EE97DED0067DBD8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D96523E51EE97DED0067DBD8 /* ViewController.m */; };
-		D96523E91EE97DED0067DBD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96523E71EE97DED0067DBD8 /* Main.storyboard */; };
 		D96523EB1EE97DED0067DBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96523EA1EE97DED0067DBD8 /* Assets.xcassets */; };
 		D96523EE1EE97DED0067DBD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96523EC1EE97DED0067DBD8 /* LaunchScreen.storyboard */; };
+		D96523FB1EEA4E470067DBD8 /* HDRequestConvertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D96523FA1EEA4E470067DBD8 /* HDRequestConvertManager.m */; };
+		D96523FE1EEA76DF0067DBD8 /* HDRequestManagerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D96523FD1EEA76DF0067DBD8 /* HDRequestManagerConfig.m */; };
+		D96524011EEE3B560067DBD8 /* HDError.m in Sources */ = {isa = PBXBuildFile; fileRef = D96524001EEE3B560067DBD8 /* HDError.m */; };
+		D96524111EEE87500067DBD8 /* AFNetworkActivityLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = D96524101EEE87500067DBD8 /* AFNetworkActivityLogger.m */; };
+		D96524151EEE8B610067DBD8 /* HDRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D96524141EEE8B610067DBD8 /* HDRequestManager.m */; };
+		D96524191EEE8BB20067DBD8 /* HDBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D96524181EEE8BB20067DBD8 /* HDBaseViewModel.m */; };
+		D965241C1EEE98E20067DBD8 /* HDHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D965241B1EEE98E20067DBD8 /* HDHomeViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25E92E39F04901A855A76047 /* Pods-HDNewHouseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDNewHouseDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDNewHouseDemo/Pods-HDNewHouseDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2F86C3835982A068F6A97A0F /* Pods-HDNewHouseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDNewHouseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDNewHouseDemo/Pods-HDNewHouseDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8108BDAC24584FCA53FD545A /* Pods_HDNewHouseDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDNewHouseDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96523DB1EE97DED0067DBD8 /* HDNewHouseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HDNewHouseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96523DF1EE97DED0067DBD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D96523E11EE97DED0067DBD8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D96523E21EE97DED0067DBD8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D96523E41EE97DED0067DBD8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D96523E51EE97DED0067DBD8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D96523E81EE97DED0067DBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D96523EA1EE97DED0067DBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D96523ED1EE97DED0067DBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D96523EF1EE97DED0067DBD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D96523F91EEA4E470067DBD8 /* HDRequestConvertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRequestConvertManager.h; sourceTree = "<group>"; };
+		D96523FA1EEA4E470067DBD8 /* HDRequestConvertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDRequestConvertManager.m; sourceTree = "<group>"; };
+		D96523FC1EEA76DF0067DBD8 /* HDRequestManagerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRequestManagerConfig.h; sourceTree = "<group>"; };
+		D96523FD1EEA76DF0067DBD8 /* HDRequestManagerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDRequestManagerConfig.m; sourceTree = "<group>"; };
+		D96523FF1EEE3B560067DBD8 /* HDError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDError.h; sourceTree = "<group>"; };
+		D96524001EEE3B560067DBD8 /* HDError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDError.m; sourceTree = "<group>"; };
+		D965240F1EEE87500067DBD8 /* AFNetworkActivityLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityLogger.h; sourceTree = "<group>"; };
+		D96524101EEE87500067DBD8 /* AFNetworkActivityLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityLogger.m; sourceTree = "<group>"; };
+		D96524131EEE8B610067DBD8 /* HDRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDRequestManager.h; sourceTree = "<group>"; };
+		D96524141EEE8B610067DBD8 /* HDRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDRequestManager.m; sourceTree = "<group>"; };
+		D96524171EEE8BB20067DBD8 /* HDBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDBaseViewModel.h; sourceTree = "<group>"; };
+		D96524181EEE8BB20067DBD8 /* HDBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDBaseViewModel.m; sourceTree = "<group>"; };
+		D965241A1EEE98E20067DBD8 /* HDHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHomeViewModel.h; sourceTree = "<group>"; };
+		D965241B1EEE98E20067DBD8 /* HDHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHomeViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +56,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD044D8BE18E7A72BA2C5B27 /* Pods_HDNewHouseDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6976169B951095BF3D5CE477 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25E92E39F04901A855A76047 /* Pods-HDNewHouseDemo.debug.xcconfig */,
+				2F86C3835982A068F6A97A0F /* Pods-HDNewHouseDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8C631AB638AA07B160DBA0A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8108BDAC24584FCA53FD545A /* Pods_HDNewHouseDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D96523D21EE97DED0067DBD8 = {
 			isa = PBXGroup;
 			children = (
 				D96523DD1EE97DED0067DBD8 /* HDNewHouseDemo */,
 				D96523DC1EE97DED0067DBD8 /* Products */,
+				6976169B951095BF3D5CE477 /* Pods */,
+				8C631AB638AA07B160DBA0A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,10 +105,11 @@
 				D96523E21EE97DED0067DBD8 /* AppDelegate.m */,
 				D96523E41EE97DED0067DBD8 /* ViewController.h */,
 				D96523E51EE97DED0067DBD8 /* ViewController.m */,
-				D96523E71EE97DED0067DBD8 /* Main.storyboard */,
 				D96523EA1EE97DED0067DBD8 /* Assets.xcassets */,
 				D96523EC1EE97DED0067DBD8 /* LaunchScreen.storyboard */,
 				D96523EF1EE97DED0067DBD8 /* Info.plist */,
+				D96524051EEE64460067DBD8 /* HDRequest */,
+				D96523F51EEA4E0F0067DBD8 /* HDNetworking */,
 				D96523DE1EE97DED0067DBD8 /* Supporting Files */,
 			);
 			path = HDNewHouseDemo;
@@ -79,6 +123,50 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D96523F51EEA4E0F0067DBD8 /* HDNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D965240F1EEE87500067DBD8 /* AFNetworkActivityLogger.h */,
+				D96524101EEE87500067DBD8 /* AFNetworkActivityLogger.m */,
+				D96523FC1EEA76DF0067DBD8 /* HDRequestManagerConfig.h */,
+				D96523FD1EEA76DF0067DBD8 /* HDRequestManagerConfig.m */,
+				D96523F91EEA4E470067DBD8 /* HDRequestConvertManager.h */,
+				D96523FA1EEA4E470067DBD8 /* HDRequestConvertManager.m */,
+				D96523FF1EEE3B560067DBD8 /* HDError.h */,
+				D96524001EEE3B560067DBD8 /* HDError.m */,
+			);
+			path = HDNetworking;
+			sourceTree = "<group>";
+		};
+		D96524051EEE64460067DBD8 /* HDRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D96524161EEE8B820067DBD8 /* HDDispersedRequest */,
+				D96524121EEE8B540067DBD8 /* HDCentralRequest */,
+			);
+			path = HDRequest;
+			sourceTree = "<group>";
+		};
+		D96524121EEE8B540067DBD8 /* HDCentralRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D96524131EEE8B610067DBD8 /* HDRequestManager.h */,
+				D96524141EEE8B610067DBD8 /* HDRequestManager.m */,
+			);
+			path = HDCentralRequest;
+			sourceTree = "<group>";
+		};
+		D96524161EEE8B820067DBD8 /* HDDispersedRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D96524171EEE8BB20067DBD8 /* HDBaseViewModel.h */,
+				D96524181EEE8BB20067DBD8 /* HDBaseViewModel.m */,
+				D965241A1EEE98E20067DBD8 /* HDHomeViewModel.h */,
+				D965241B1EEE98E20067DBD8 /* HDHomeViewModel.m */,
+			);
+			path = HDDispersedRequest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D96523F21EE97DED0067DBD8 /* Build configuration list for PBXNativeTarget "HDNewHouseDemo" */;
 			buildPhases = (
+				FA037012D94B1B231DE01409 /* [CP] Check Pods Manifest.lock */,
 				D96523D71EE97DED0067DBD8 /* Sources */,
 				D96523D81EE97DED0067DBD8 /* Frameworks */,
 				D96523D91EE97DED0067DBD8 /* Resources */,
+				D28C24C01B717A0D8B7A6875 /* [CP] Embed Pods Frameworks */,
+				6EDF7728E612A32EB85DA87F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -110,7 +201,8 @@
 				TargetAttributes = {
 					D96523DA1EE97DED0067DBD8 = {
 						CreatedOnToolsVersion = 8.3.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = B9FH944VTE;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -139,11 +231,58 @@
 			files = (
 				D96523EE1EE97DED0067DBD8 /* LaunchScreen.storyboard in Resources */,
 				D96523EB1EE97DED0067DBD8 /* Assets.xcassets in Resources */,
-				D96523E91EE97DED0067DBD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6EDF7728E612A32EB85DA87F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDNewHouseDemo/Pods-HDNewHouseDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D28C24C01B717A0D8B7A6875 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HDNewHouseDemo/Pods-HDNewHouseDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA037012D94B1B231DE01409 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D96523D71EE97DED0067DBD8 /* Sources */ = {
@@ -151,7 +290,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D96523E61EE97DED0067DBD8 /* ViewController.m in Sources */,
+				D96523FE1EEA76DF0067DBD8 /* HDRequestManagerConfig.m in Sources */,
+				D96524111EEE87500067DBD8 /* AFNetworkActivityLogger.m in Sources */,
+				D96524191EEE8BB20067DBD8 /* HDBaseViewModel.m in Sources */,
+				D96523FB1EEA4E470067DBD8 /* HDRequestConvertManager.m in Sources */,
+				D965241C1EEE98E20067DBD8 /* HDHomeViewModel.m in Sources */,
 				D96523E31EE97DED0067DBD8 /* AppDelegate.m in Sources */,
+				D96524151EEE8B610067DBD8 /* HDRequestManager.m in Sources */,
+				D96524011EEE3B560067DBD8 /* HDError.m in Sources */,
 				D96523E01EE97DED0067DBD8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,14 +305,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D96523E71EE97DED0067DBD8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D96523E81EE97DED0067DBD8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D96523EC1EE97DED0067DBD8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -270,23 +408,31 @@
 		};
 		D96523F31EE97DED0067DBD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E92E39F04901A855A76047 /* Pods-HDNewHouseDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B9FH944VTE;
 				INFOPLIST_FILE = HDNewHouseDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.HDNewHouseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0380381a-fdcd-469a-aa10-4e4e245f46f5";
+				PROVISIONING_PROFILE_SPECIFIER = wildcard_dev;
 			};
 			name = Debug;
 		};
 		D96523F41EE97DED0067DBD8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F86C3835982A068F6A97A0F /* Pods-HDNewHouseDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B9FH944VTE;
 				INFOPLIST_FILE = HDNewHouseDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harry.HDNewHouseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0380381a-fdcd-469a-aa10-4e4e245f46f5";
+				PROVISIONING_PROFILE_SPECIFIER = wildcard_dev;
 			};
 			name = Release;
 		};
@@ -309,6 +455,7 @@
 				D96523F41EE97DED0067DBD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
