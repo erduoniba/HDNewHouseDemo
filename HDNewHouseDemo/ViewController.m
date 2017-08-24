@@ -57,7 +57,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
     if (indexPath.row % 2 == 0) {
         [self.requestManager homePageSuccess:^(NSURLSessionDataTask * _Nullable httpbase, id  _Nullable responseObject) {
             //NSLog(@"responseObject : %@", responseObject);
@@ -68,12 +67,6 @@
     else {
         [[HDHomeViewModel new] start];
     }
-
-
-
-    return ;
-    UIViewController *vc = [[NSClassFromString(_dataArr[indexPath.row]) class] new];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
