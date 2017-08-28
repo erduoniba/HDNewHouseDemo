@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HDNewHouseDemo/HDNetworking/HDRequestConvertManager.m"
-            timestampString = "518954124.4294"
+            timestampString = "525605032.622707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "-requestMethod:parameters:URLString:configurationHandler:success:failure:"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "-requestMethod:URLString:parameters:configurationHandler:success:failure:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HDNewHouseDemo/HDNetworking/HDRequestConvertManager.m"
-            timestampString = "518954124.4294"
+            timestampString = "525605032.622707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "-requestMethod:parameters:URLString:configurationHandler:success:failure:"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-requestMethod:URLString:parameters:configurationHandler:success:failure:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HDNewHouseDemo/HDNetworking/HDRequestConvertManager.m"
-            timestampString = "518955002.533181"
+            timestampString = "525605032.622707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "-requestMethod:parameters:URLString:configurationHandler:success:failure:"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-requestMethod:URLString:parameters:configurationHandler:success:failure:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,44 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HDNewHouseDemo/HDNetworking/HDRequestConvertManager.m"
-            timestampString = "518955101.692271"
+            timestampString = "525605032.622707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "-requestMethod:parameters:URLString:configurationHandler:success:failure:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HDNewHouseDemo/HDNetworking/HDRequestConvertManager.m"
-            timestampString = "518955121.401432"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "-verifyInvalidCache:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HDNewHouseDemo/HDNetworking/HDRequestConvertManager.m"
-            timestampString = "519012616.564029"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
-            landmarkName = "-setCacheInvalidTimeWithCacheKey:resultCacheDuration:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,7 +90,7 @@
                   moduleName = "HDNewHouseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denglibing/denglibing/HarryProject/iOSProject/HDNewHouseDemo/HDNewHouseDemo/ViewController.m"
-                  timestampString = "525259361.169756"
+                  timestampString = "525605033.674422"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
@@ -137,7 +105,7 @@
                   moduleName = "HDNewHouseDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/denglibing/denglibing/HarryProject/iOSProject/HDNewHouseDemo/HDNewHouseDemo/ViewController.m"
-                  timestampString = "525259361.171794"
+                  timestampString = "525605033.677639"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "65"
@@ -160,6 +128,70 @@
             startingLineNumber = "68"
             endingLineNumber = "68"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HDNewHouseDemo/ViewController.m"
+            timestampString = "525600352.565937"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HDNewHouseDemo/HDRequest/HDCentralRequest/HDRequestManager.m"
+            timestampString = "525600399.597369"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-homePageSuccess:failure:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HDNewHouseDemo/HDNetworking/HDRequestConvertManager.m"
+            timestampString = "525605032.622707"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-requestMethod:URLString:parameters:configurationHandler:success:failure:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HDNewHouseDemo/HDNetworking/HDRequestConvertManager.m"
+            timestampString = "525605032.622707"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
+            landmarkName = "-setCacheInvalidTimeWithCacheKey:resultCacheDuration:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -58,9 +58,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row % 2 == 0) {
-        [self.requestManager homePageSuccess:^(NSURLSessionDataTask * _Nullable httpbase, id  _Nullable responseObject) {
+        [self.requestManager homePageSuccess:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
             //NSLog(@"responseObject : %@", responseObject);
-        } failure:^(NSURLSessionDataTask * _Nullable httpbase, id  _Nullable responseObject) {
+        } failure:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
 
         }];
     }

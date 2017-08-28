@@ -168,6 +168,8 @@ static void * AFNetworkRequestStartDate = &AFNetworkRequestStartDate;
     } else {
         switch (self.level) {
             case AFLoggerLevelDebug:
+            case AFLoggerLevelWarn:
+            case AFLoggerLevelError:
                 NSLog(@"%ld '%@' [%.04f s]: %@ %@", (long)responseStatusCode, [[response URL] absoluteString], elapsedTime, responseHeaderFields, responseObject);
                 break;
             case AFLoggerLevelInfo:

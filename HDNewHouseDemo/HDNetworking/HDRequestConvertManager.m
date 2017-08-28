@@ -9,7 +9,6 @@
 #import "HDRequestConvertManager.h"
 
 #import "HDRequestManagerConfig.h"
-#import "AFNetworkActivityLogger.h"
 #import "HDError.h"
 
 #import <PINCache/PINCache.h>
@@ -83,46 +82,36 @@ NSString * const HDDNetworkCacheSharedName = @"HDDNetworkCacheSharedName";
     return _requestManager;
 }
 
+/**
+ 设置网络请求的log等级
+
+ @param loggerLevel log等级，当网络请求失败时，无论是哪种等级都会打印error信息，当网络成功时，
+ AFLoggerLevelInfo：打印请求的code码、请求的url和本次请求耗时；
+ AFLoggerLevelDebug/AFLoggerLevelWarn/AFLoggerLevelError：打印请求的code码、请求的url、本次请求耗时、header信息及返回数据；
+ */
+- (void)setLoggerLevel:(AFHTTPRequestLoggerLevel)loggerLevel {
+    [[AFNetworkActivityLogger sharedLogger] setLevel:loggerLevel];
+}
 
 #pragma mark - 接口管理
 /**
  提供给上层请求
 
  @param method 请求的方法
+ @param URLString 请求的URL地址，不包含baseUrl
  @param parameters 请求的参数
- @param configurationHandler 将默认的配置给到外面，外面可能需要特殊处理
+ @param configurationHandler 将默认的配置给到外面，外面可能需要特殊处理，可以修改baseUrl等信息
  @param success 请求成功
  @param failure 请求失败
  @return 返回该请求的任务管理者，用于取消该次请求
  */
 - (NSURLSessionDataTask *_Nullable)requestMethod:(HDRequestMethod)method
-                                      parameters:(nullable id)parameters
                                        URLString:(NSString *_Nullable)URLString
+                                      parameters:(NSDictionary *_Nullable)parameters
                             configurationHandler:(void (^_Nullable)(HDRequestManagerConfig * _Nullable configuration))configurationHandler
                                          success:(HDRequestManagerSuccess _Nullable )success
                                          failure:(HDRequestManagerFailure _Nullable )failure {
-    //configuration配置
-    HDRequestManagerConfig *configuration = [self.configuration copy];
-    if (configurationHandler) {
-        configurationHandler(configuration);
-    }
-    self.requestManager.requestSerializer = configuration.requestSerializer;
-    self.requestManager.responseSerializer = configuration.responseSerializer;
-    if (configuration.builtinHeaders.count > 0) {
-        for (NSString *key in configuration.builtinHeaders) {
-            [self.requestManager.requestSerializer setValue:configuration.builtinHeaders[key] forHTTPHeaderField:key];
-        }
-    }
-
-    [self.requestManager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
-    if (configuration.timeoutInterval > 0) {
-        self.requestManager.requestSerializer.timeoutInterval = configuration.timeoutInterval;
-    }
-    else {
-        self.requestManager.requestSerializer.timeoutInterval = HDRequestTimeoutInterval;
-    }
-    [self.requestManager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
-
+    HDRequestManagerConfig *configuration = [self disposeConfiguration:configurationHandler];
     NSString *requestUrl = [[NSURL URLWithString:URLString relativeToURL:[NSURL URLWithString:configuration.baseURL]] absoluteString];
 
     //PINCache缓存取数据
@@ -180,9 +169,127 @@ NSString * const HDDNetworkCacheSharedName = @"HDDNetworkCacheSharedName";
                                                       success(dataTask, responseObject);
                                                   }
                                               }];
-
     [dataTask resume];
     return dataTask;
+}
+
+/**
+ 上传资源方法
+
+ @param URLString URLString 请求的URL地址，不包含baseUrl
+ @param parameters 请求参数
+ @param block 将要上传的资源回调
+ @param configurationHandler 将默认的配置给到外面，外面可能需要特殊处理，可以修改baseUrl等信息
+ @param progress 上传资源进度
+ @param success 请求成功
+ @param failure 请求失败
+ @return 返回该请求的任务管理者，用于取消该次请求(⚠️⚠️，当返回值为nil时，表明并没有进行网络请求，可能是取缓存数据)
+ */
+- (NSURLSessionTask *_Nullable)uploadWithURLString:(NSString *_Nullable)URLString
+                                        parameters:(NSDictionary *_Nullable)parameters
+                         constructingBodyWithBlock:(void (^_Nullable)(id <AFMultipartFormData> _Nullable formData))block
+                              configurationHandler:(void (^_Nullable)(HDRequestManagerConfig * _Nullable configuration))configurationHandler
+                                          progress:(HDRequestManagerProgress _Nullable)progress
+                                           success:(HDRequestManagerSuccess _Nullable )success
+                                           failure:(HDRequestManagerFailure _Nullable )failure {
+    HDRequestManagerConfig *configuration = [self disposeConfiguration:configurationHandler];
+    NSString *requestUrl = [[NSURL URLWithString:URLString relativeToURL:[NSURL URLWithString:configuration.baseURL]] absoluteString];
+    __weak typeof(self) weak_self = self;
+    NSURLSessionDataTask *dataTask = [self.requestManager POST:requestUrl
+                                                    parameters:parameters
+                                     constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+                                         block(formData);
+                                     } progress:^(NSProgress * _Nonnull uploadProgress) {
+                                         progress(uploadProgress);
+                                     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                         success(task, responseObject);
+                                     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                         __strong typeof(self) strong_self = weak_self;
+                                         HDError *hdError;
+                                         if (strong_self.networkStatus == AFNetworkReachabilityStatusNotReachable) {
+                                             hdError = [HDError hdErrorNetNotReachable];
+                                         }
+                                         else {
+                                             hdError = [HDError hdErrorHttpError:error];
+                                         }
+                                         failure(task, hdError);
+                                     }];
+    [dataTask resume];
+    return dataTask;
+}
+
+/**
+ 下载资源方法
+
+ @param URLString URLString 请求的URL地址，不包含baseUrl
+ @param configurationHandler 将默认的配置给到外面，外面可能需要特殊处理，可以修改baseUrl等信息
+ @param progress 上传资源进度
+ @param success 请求成功
+ @param failure 请求失败
+ @return 返回该请求的任务管理者，用于取消该次请求
+ */
+- (NSURLSessionTask *_Nullable)downloadWithURLString:(NSString *_Nullable)URLString
+                                configurationHandler:(void (^_Nullable)(HDRequestManagerConfig * _Nullable configuration))configurationHandler
+                                            progress:(HDRequestManagerProgress _Nullable)progress
+                                             success:(HDRequestManagerSuccess _Nullable )success
+                                             failure:(HDRequestManagerFailure _Nullable )failure {
+    HDRequestManagerConfig *configuration = [self disposeConfiguration:configurationHandler];
+    NSString *requestUrl = [[NSURL URLWithString:URLString relativeToURL:[NSURL URLWithString:configuration.baseURL]] absoluteString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestUrl]];
+    __weak typeof(self) weak_self = self;
+    __block NSURLSessionTask *dataTask = [self.requestManager downloadTaskWithRequest:request
+                                                                                 progress:^(NSProgress * _Nonnull downloadProgress) {
+                                                                                     progress(downloadProgress);
+                                                                                 } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+                                                                                     NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+                                                                                     return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+                                                                                 } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+                                                                                     __strong typeof(self) strong_self = weak_self;
+                                                                                     if (error) {
+                                                                                         HDError *hdError;
+                                                                                         if (strong_self.networkStatus == AFNetworkReachabilityStatusNotReachable) {
+                                                                                             hdError = [HDError hdErrorNetNotReachable];
+                                                                                         }
+                                                                                         else {
+                                                                                             hdError = [HDError hdErrorHttpError:error];
+                                                                                         }
+                                                                                         failure(dataTask, hdError);
+                                                                                     }
+                                                                                     else {
+                                                                                         if (self.configuration.resposeHandle) {
+                                                                                             filePath = self.configuration.resposeHandle(dataTask, filePath);
+                                                                                         }
+                                                                                         success(dataTask, filePath);
+                                                                                     }
+                                                                                 }];
+    [dataTask resume];
+    return dataTask;
+}
+
+
+- (HDRequestManagerConfig *)disposeConfiguration:(void (^_Nullable)(HDRequestManagerConfig * _Nullable configuration))configurationHandler {
+    //configuration配置
+    HDRequestManagerConfig *configuration = [self.configuration copy];
+    if (configurationHandler) {
+        configurationHandler(configuration);
+    }
+    self.requestManager.requestSerializer = configuration.requestSerializer;
+    self.requestManager.responseSerializer = configuration.responseSerializer;
+    if (configuration.builtinHeaders.count > 0) {
+        for (NSString *key in configuration.builtinHeaders) {
+            [self.requestManager.requestSerializer setValue:configuration.builtinHeaders[key] forHTTPHeaderField:key];
+        }
+    }
+
+    [self.requestManager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    if (configuration.timeoutInterval > 0) {
+        self.requestManager.requestSerializer.timeoutInterval = configuration.timeoutInterval;
+    }
+    else {
+        self.requestManager.requestSerializer.timeoutInterval = HDRequestTimeoutInterval;
+    }
+    [self.requestManager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    return configuration;
 }
 
 

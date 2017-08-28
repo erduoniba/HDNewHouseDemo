@@ -55,6 +55,6 @@ extern const CGFloat HDRequestTimeoutInterval;
 /**
  对请求返回的数据做统一的处理，比如token失效、重新登录等等操作。
  */
-@property (nonatomic, copy) id (^ resposeHandle)(NSURLSessionDataTask *dataTask, id responseObject);
+@property (nonatomic, copy) id (^ resposeHandle)(NSURLSessionTask *dataTask, id responseObject);
 
 @end

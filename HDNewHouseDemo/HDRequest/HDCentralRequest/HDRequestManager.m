@@ -47,9 +47,10 @@ NSString * const YYBRequestDataTag = @"data";
     builtinHeaders[@"state"] = @"00";
     builtinHeaders[@"Content-Type"] = @"application/json";
     self.requestConvertManager.configuration.builtinHeaders = builtinHeaders;
+    [self.requestConvertManager setLoggerLevel:AFLoggerLevelDebug];
 
     //通过configuration来统一处理输出的数据，比如对token失效处理、对需要重新登录拦截
-    self.requestConvertManager.configuration.resposeHandle = ^id (NSURLSessionDataTask *dataTask, id responseObject) {
+    self.requestConvertManager.configuration.resposeHandle = ^id (NSURLSessionTask *dataTask, id responseObject) {
         return responseObject;
     };
 }
@@ -75,14 +76,14 @@ NSString * const YYBRequestDataTag = @"data";
                 failure:(HDRequestManagerSuccess _Nullable )failure {
     NSString *url = [NSString stringWithFormat:@"home/page1.json"];
     [self.requestConvertManager requestMethod:HDRequestMethodPost
-                                   parameters:@{@"xx" : @"yy"}
                                     URLString:url
+                                   parameters:@{@"xx" : @"yy"}
                          configurationHandler:^(HDRequestManagerConfig * _Nullable configuration) {
                              configuration.resultCacheDuration = 100000; //设置缓存时长为100000秒
                              configuration.requestPriorityCache = YES; //优先取缓存数据，不在请求网络数据
-                         } success:^(NSURLSessionDataTask * _Nullable dataTask, id  _Nullable responseObject) {
+                         } success:^(NSURLSessionTask * _Nullable dataTask, id  _Nullable responseObject) {
                              success(dataTask, responseObject);
-                         } failure:^(NSURLSessionDataTask * _Nullable dataTask, HDError * _Nullable error) {
+                         } failure:^(NSURLSessionTask * _Nullable dataTask, HDError * _Nullable error) {
                              failure(dataTask, error);
                          }];
 }

@@ -40,7 +40,7 @@
     self.requestConvertManager.configuration.builtinHeaders = builtinHeaders;
 
     //通过configuration来统一处理输出的数据，比如对token失效处理、对需要重新登录拦截
-    self.requestConvertManager.configuration.resposeHandle = ^id (NSURLSessionDataTask *dataTask, id responseObject) {
+    self.requestConvertManager.configuration.resposeHandle = ^id (NSURLSessionTask *dataTask, id responseObject) {
         return responseObject;
     };
 
@@ -69,13 +69,13 @@
 
 - (void)start {
     _dataTask = [self.requestConvertManager requestMethod:[self hdRequestMethodType]
-                                               parameters:nil
                                                 URLString:[self hdRequestURL]
+                                               parameters:nil
                                      configurationHandler:^(HDRequestManagerConfig * _Nullable configuration) {
                                          [self hdRequestConfiguration:configuration];
-                                     } success:^(NSURLSessionDataTask * _Nullable httpbase, id  _Nullable responseObject) {
+                                     } success:^(NSURLSessionTask * _Nullable httpbase, id  _Nullable responseObject) {
 
-                                     } failure:^(NSURLSessionDataTask * _Nullable httpbase, HDError * _Nullable error) {
+                                     } failure:^(NSURLSessionTask * _Nullable httpbase, HDError * _Nullable error) {
                                          
                                      }];
 }
